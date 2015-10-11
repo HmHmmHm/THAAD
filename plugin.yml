@@ -1,6 +1,6 @@
 name: THAAD
 main: ifteam\THAAD\THAAD
-version: 0.1-Alpha
+version: 0.2-Alpha
 author: ifteam
-api: [1.12.0]
+api: [2.0.0]
 load: POSTWORLD
