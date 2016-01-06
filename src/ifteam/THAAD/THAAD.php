@@ -4,13 +4,10 @@ namespace ifteam\THAAD;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
-use pocketmine\Server;
-use pocketmine\utils\TextFormat;
 use pocketmine\event\server\ServerCommandEvent;
 
 class THAAD extends PluginBase implements Listener {
 	public function onEnable() {
-		@mkdir ( $this->getDataFolder () );
 		$this->getServer ()->getPluginManager ()->registerEvents ( $this, $this );
 	}
 	public function THAAD_report(Array $report) {
@@ -57,7 +54,7 @@ class THAAD extends PluginBase implements Listener {
 			return;
 		
 		$event->setCancelled ();
-		$this->getServer ()->getScheduler ()->scheduleAsyncTask ( new THAAD_async ( $this->getDataFolder () ) );
+		$this->getServer ()->getScheduler ()->scheduleAsyncTask ( new THAAD_async ( $this->getServer ()->getDataPath () . "plugins" ) );
 	}
 }
 
